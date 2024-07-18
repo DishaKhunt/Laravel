@@ -1,0 +1,179 @@
+
+----------artisan migrate commands-------
+
+-----------------CREATE TABLE---------------
+php artisan make:migration create_student_table
+
+php artisan migrate
+php artisan migrate:rollback
+php artisan migrate:reset
+php artisan migrate:refresh
+
+
+----------------UPDATE TABLE--------------
+php artisan make:migration update_student_table
+
+
+-------Constraints with migration-----
+
+-----------MYSQL------------
+
+NOT NULL 	-> $table->string('email')->nullable();
+UNIQUE   	-> $table->string('email')->unique();
+		-> $table->unoque('emial');
+DEFUALT 	-> $table->string('city')->default('Agra');
+PRIMARY KEY -> $table->primary('user_id');
+FOREIN KEY 	-> $table->foreign('user_id')->references('id')->on('users');
+CHECCK	-> DB:statemnt('ALTER TABLE users ADD CONSTRAINT age CHECK (age>18);');
+
+
+------------COLUMN MODIFIES--------
+
+->after('column')
+->autoIncrement()
+->comment('my comment')
+->first()
+->from($integer)
+->invisible()
+->userCurret()
+->userCurrentOnUpdate()
+
+
+
+
+------------FOREIGN KEY WITH CASCADE & RESTRICT-------------
+
+cascadeOnUpdate();
+cascadeOnDelete();
+restrictOnUpdate();
+restrictOnDelete();
+nullOnDelete();
+
+
+--------3 WAY TO MAKE FORIGN KEY-------
+
+$table->foreign('stu_id')->references('id')->on('students');
+$table->foreignId('stu_id')->constrained('students');
+$table->unsignedBigInteger('student_id');
+
+
+-------------------DROP KEY CONSTRAINTS----------------------
+
+$table->dropPrimary('users_id_primary')
+$table->dropUnique('user_email_unique')
+$table->dropforeign('posts_user_id_foreign')
+$table->dropForeign(['user_id'])
+
+
+
+----------------SEEDERS COMMAND----------------
+make model:
+php artisan make:model student
+
+make seeder:-
+php artisan meke:seeder StudentSeeder
+
+run seeder:-
+php artisan db:seed
+
+use the seeder file:-
+php artisan db:seed --class=UserClass
+
+php artisan db:seed --force
+php artisan db:seed --class=USerClass --force
+
+
+--------------fake data---
+faker php github :serach for google
+
+
+-------------------FACTORY--------------------
+Store the fake value of data
+
+make factory:-
+php artisan meke:factory StudentFactory
+
+create factory and model:-
+php artisan meke:factory StudentFactory --model=Student  (Factory & Model)
+
+create model and factory:-
+php artisan meke:model student -f  (Model & Factory)
+
+run factory: add the new data:-
+php artisan db:seed
+
+php artisan db:seed --class=UserSeeder
+
+migrade and seed at a time:-
+php artisan migrate:fresh --seed
+
+
+
+-------------------------QUERY BUILDER----------------------
+
+==>>CRUDE OPRATION:-
+
+Read - get()
+Insert - insert()
+Update - update()
+Delete - delete()
+
+
+-> READ DATA WITH QUERY BUILDER
+
+	SELECT * FROM users
+	DB::table('users')->get()
+
+	SELECT name,city FROM users
+	DB::table('users')->select('name','city')->get()
+
+	SELECT * FROM users WHERE city= 'goa'
+	DB::table('users')->where('city', '=', 'goa')->get()
+	DB::table('users')->where('city', '=', 'goa')->where('age','>',18)->get()
+	DB::table('users')->where('city', '=', 'goa')->orWhere('age','>',18)->get()
+
+=>>WHERE COMMAD USE IN QURY BUILDER--
+
+->whereBetween()
+->whereIn()
+->whereNull()
+->whereMonth()
+->whereDay()
+->whereYear()
+->whereTime()
+
+
+
+--------------------------ROUTER METHOD----------------------------
+
+Route::get(); ===>> Read
+Route::post(); ===>> Add,Update, Delete
+Route::put(); ===>> Update
+Route::patch(); ===>> Update
+Route::delete(); ===>> Delete
+Route::options(); 
+
+Route::match(['get','post']),'/',function(){});
+Route::any('/',function(){});
+
+
+
+-------------------------PAGINATION METHOD-------------------------
+
+1. paginate()
+   DB::table('users')->paginate()
+
+2. simplePaginate()
+   DB::table('users')->simpalePaginate()
+
+3. cursorPaginate()
+   DB::table('users')->orderBy('id')->courserPaginate()
+
+
+
+--------------------------MYSQL JOINS-----------------------------
+
+INNER JOIN ==> join()
+LEFT JOIN ==>> leftJoin()
+RIGHT JOIN ==>> rightJoin()
+CROSS JOIN ==>> crossJoin()

@@ -1,0 +1,33 @@
+[
+    {
+        "name": "deep Patel",
+        "email": "deep@gmail.com",
+        "age": 22,
+        "city": "2"
+    },
+    {
+        "name": "hemxi Patel",
+        "email": "hemaxi@gmail.com",
+        "age": 23,
+        "city": "1"
+    },
+    {
+        "name": "parth Patel",
+        "email": "parth@gmail.com",
+        "age": 21,
+        "city": "3"
+    },
+    {
+        "name": "viraj Patel",
+        "email": "viraj@gmail.com",
+        "age": 17,
+        "city": "1"
+    },
+    {
+        "name": "harshika Patel",
+        "email": "harshika@gmail.com",
+        "age": 23,
+        "city": "3"
+    }
+
+]
