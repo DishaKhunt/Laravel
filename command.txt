@@ -177,3 +177,8 @@ INNER JOIN ==> join()
 LEFT JOIN ==>> leftJoin()
 RIGHT JOIN ==>> rightJoin()
 CROSS JOIN ==>> crossJoin()
+
+
+
+---------------------ELOQUENT MODEL CONVERNTION----------------
+use HasUuid;

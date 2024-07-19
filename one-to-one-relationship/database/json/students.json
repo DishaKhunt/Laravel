@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Disha Patel",
+        "age": 22,
+        "gender": "Female"
+    },
+    {
+        "name": "Isha Patel",
+        "age": 23,
+        "gender": "Female"
+    },
+    {
+        "name": "Manshi Patel",
+        "age": 21,
+        "gender": "Female"
+    },
+    {
+        "name": "Harsh Patel",
+        "age": 17,
+        "gender": "Male"
+    },
+    {
+        "name": "Miraj Patel",
+        "age": 23,
+        "gender": "Male"
+    }
+
+]

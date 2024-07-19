@@ -1,0 +1,37 @@
+[
+    {
+      "email": "disha@example.com",
+      "phone": "1234567890",
+      "address": "123 Maple St",
+      "city": "Rajkot",
+      "student_id" : 1
+    },
+    {
+      "email": "isha@example.com",
+      "phone": "2345678901",
+      "address": "456 Oak St",
+      "city": "Rajkot",
+      "student_id" : 2
+    },
+    {
+      "email": "manshi@example.com",
+      "phone": "3456789012",
+      "address": "789 Pine St",
+      "city": "Surat",
+      "student_id" : 3
+    },
+    {
+      "email": "harsh@example.com",
+      "phone": "4567890123",
+      "address": "101 Cedar St",
+      "city": "Ahamadabad",
+      "student_id" : 4
+    },
+    {
+      "email": "miraj@example.com",
+      "phone": "5678901234",
+      "address": "202 Birch St",
+      "city": "Pune",
+      "student_id" : 5
+    }
+]
