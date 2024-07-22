@@ -5,13 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class User extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    // public $timestamps = false;
 
-    public function student(){
-        return $this->belongsTo(Student::class);
+    public function post(){
+        return $this->hasMany(Post::class);
     }
 }

@@ -13,11 +13,23 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $studets = Student::with('contact')->find(2);
-        // return $studets;
+        // $studets = Student::with('contact')->find(2);
 
-        echo $studets->name . "<br>";
-        echo $studets->contact->email . "<br>";
+        // $studets = Student::with('contact')->where('gender', 'Female')->get();
+
+       /*  $studets = Student::where('gender', 'Female')->withWhereHas('contact',function($query){
+            $query->where('city', 'Rajkot');
+        })->get(); */
+
+        $studets = Student::where('gender', 'Female')
+                ->whereHas('contact',function($query){
+                    $query->where('city', 'Rajkot');
+                })->get();
+
+        return $studets;
+
+        // echo $studets->name . "<br>";
+        // echo $studets->contact->email . "<br>";
     }
 
     /**
@@ -25,7 +37,18 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        $student = Student::create([
+            'name' => 'Harshi Rabadiya',
+            'age' => 23,
+            'gender' => 'Female'
+        ]);
+
+        $student->contact()->create([
+            'email' => 'harshi@gmail.com',
+            'phone' => '1234565432',
+            'address' => 'Sola Gam',
+            'city' => 'Ahamdabad'
+        ]);
     }
 
     /**

@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "name": "Rahul Sharma",
+      "email": "rahul@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Anjali Mehta",
+      "email": "angali@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Vikram Singh",
+      "email": "vikram@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Priya Patel",
+      "email": "priya@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Ravi Kumar",
+      "email": "ravi@gmail.com"
+    }
+  ]
+  

@@ -9,6 +9,10 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+    // public $timestamps = false;
+
     public function contact(){
         return $this->hasOne(Contact::class);
     }
