@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -11,7 +13,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        $role = Role::find(2);
+
+        return $role->users;
     }
 
     /**
@@ -19,7 +23,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        $role = Role::find(2);
+        $userid = [5,7];
+        $role->users()->sync($userid);
     }
 
     /**
